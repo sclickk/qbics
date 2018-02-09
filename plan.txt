@@ -1,0 +1,6 @@
+Usage:
+qbics solve <cubefile>
+
+First:
+* Check if cube file is real, if not throw error.
+* If real, use Fridrich method
