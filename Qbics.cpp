@@ -15,9 +15,13 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
+#ifndef __QBICS__CPP__
+#define __QBICS__CPP__
+
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Solve.cpp"
 
 static void show_usage(std::string name)
 {
@@ -37,7 +41,6 @@ int main(int argc, char* argv[])
     }
 
     std::vector <std::string> sources;
-    std::string cubefile;
 
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
@@ -46,7 +49,7 @@ int main(int argc, char* argv[])
             return 0;
         } else if ((arg == "solve")) {
             if (i + 1 < argc) {
-                cubefile = argv[i++];
+                // put something in here when I have time.
             } else {
                 std::cerr << "\"solve\" requires one argument." << std::endl;
                 return 1;
@@ -57,3 +60,5 @@ int main(int argc, char* argv[])
     }
     return 0;
 }
+
+#endif /* __QBICS_CPP__ */
