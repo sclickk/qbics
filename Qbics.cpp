@@ -42,8 +42,8 @@ int main(int argc, char* argv[])
             show_usage(argv[0]);
             return 0;
         } else if ((arg == "solve")) {
-            if (i + 1 < argc) {                         // Make sure we aren't at the end of argv!
-                cubefile = argv[i++];                // Increment 'i' so we don't get the argument as the next argv[i].
+            if (i + 1 < argc) {
+                cubefile = argv[i++];
             } else {
                   std::cerr << "\"solve\" requires one argument." << std::endl;
                 return 1;
