@@ -1,17 +1,19 @@
-// Copyright (C) 2018  E. S. Villarreal
-
-// This program is free software; you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation; version 2 of the License.
-
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// You should have received a copy of the GNU General Public License along
-// with this program; if not, write to the Free Software Foundation, Inc.,
-// 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+/*
+ * Copyright (C) 2018  E. S. Villarreal
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 2 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
 
 #include <iostream>
 #include <string>
@@ -19,10 +21,11 @@
 
 static void show_usage(std::string name)
 {
-    std::cerr << "Usage: " << argv[0] << " <option(s)> SOURCES"
+    std::cerr << "qbics - the quick Rubik's cube solver\n"
+              << "Usage: qbics <args>\n"
               << "Options:\n"
-              << "\tsolve\t\tPrint notation to solve a cubefile\n"
-              << "\thelp\t\tShow this help message\n"
+              << "\tsolve <cubefile>: Print notation to solve a cubefile\n"
+              << "\thelp: Show this help message\n"
               << std::endl;
 }
 
@@ -45,12 +48,12 @@ int main(int argc, char* argv[])
             if (i + 1 < argc) {
                 cubefile = argv[i++];
             } else {
-                  std::cerr << "\"solve\" requires one argument." << std::endl;
+                std::cerr << "\"solve\" requires one argument." << std::endl;
                 return 1;
-            }  
+            }
         } else {
             sources.push_back(argv[i]);
         }
     }
-    return move(sources, cubefile);
+    return 0;
 }
