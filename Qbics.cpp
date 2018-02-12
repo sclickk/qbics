@@ -21,7 +21,8 @@ static void show_usage(std::string name)
 {
     std::cerr << "Usage: " << argv[0] << " <option(s)> SOURCES"
               << "Options:\n"
-              << "\t-h,--help\t\tShow this help message\n"
+              << "\tsolve\t\tPrint notation to solve a cubefile\n"
+              << "\thelp\t\tShow this help message\n"
               << std::endl;
 }
 
