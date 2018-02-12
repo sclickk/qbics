@@ -13,11 +13,43 @@
 // with this program; if not, write to the Free Software Foundation, Inc.,
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-#import <iostream>
-#import <ifstream>
+#include <iostream>
+#include <string>
+#include <vector>
 
-int main(int argc, char const *argv[])
+static void show_usage(std::string name)
 {
-    /* code */
-    return 0;
+    std::cerr << "Usage: " << argv[0] << " <option(s)> SOURCES"
+              << "Options:\n"
+              << "\t-h,--help\t\tShow this help message\n"
+              << std::endl;
+}
+
+int main(int argc, char* argv[])
+{
+    if (argc < 3) {
+        show_usage(argv[0]);
+        return 1;
+    }
+
+    std::vector <std::string> sources;
+    std::string cubefile;
+
+    for (int i = 1; i < argc; ++i) {
+        std::string arg = argv[i];
+        if ((arg == "help")) {
+            show_usage(argv[0]);
+            return 0;
+        } else if ((arg == "solve")) {
+            if (i + 1 < argc) {                         // Make sure we aren't at the end of argv!
+                cubefile = argv[i++];                // Increment 'i' so we don't get the argument as the next argv[i].
+            } else {
+                  std::cerr << "\"solve\" requires one argument." << std::endl;
+                return 1;
+            }  
+        } else {
+            sources.push_back(argv[i]);
+        }
+    }
+    return move(sources, cubefile);
 }
