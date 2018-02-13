@@ -23,7 +23,7 @@
 #include <vector>
 #include "Solve.cpp"
 
-static void show_usage(std::string name)
+static void show_usage()
 {
     std::cerr << "qbics - the quick Rubik's cube solver\n"
               << "Usage: qbics <args>\n"
@@ -36,7 +36,7 @@ static void show_usage(std::string name)
 int main(int argc, char* argv[])
 {
     if (argc < 3) {
-        show_usage(argv[0]);
+        show_usage();
         return 1;
     }
 
@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
         if ((arg == "help")) {
-            show_usage(argv[0]);
+            show_usage();
             return 0;
         } else if ((arg == "solve")) {
             if (i + 1 < argc) {
