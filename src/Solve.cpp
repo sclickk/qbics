@@ -41,6 +41,7 @@ namespace cube {
         const char* bottomBackEdge;
         
     };
+
     struct corners {
         const char* topFrontRightCorner;
         const char* topFrontLeftCorner;
@@ -51,6 +52,12 @@ namespace cube {
         const char* bottomBackRightCorner;
         const char* bottomBackLeftCorner;
     };
+
+    /*
+     * Cubefiles should be converted into Cubestrings.
+     * A solved cube will have a cubestring like this:
+     *   WWWWWWWWWGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBOOOYYYYYYYYY
+     */
 };
 
 class Solve {};
